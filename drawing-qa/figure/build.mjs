@@ -23,15 +23,15 @@ const ROOF_T = 14;                         // 140 mm slab + screed shown as one 
 const SCREED = 4;                          // 40 mm screed line on the slab edge
 const FRAMES = [-95, 95];                  // two support frames, 1.9 m apart
 const LEGS = [-34, 34];                    // legs 680 mm apart
-const PLINTH = 30, PLINTH_H = 15;          // 300 x 300 x 150 concrete plinth
-const COLLAR = 1.6, COLLAR_H = 5;          // membrane upstand around the plinth
+const PLINTH = 30, PLINTH_H = 20;          // 300 x 300 x 200 concrete plinth
+const COLLAR = 1.6, COLLAR_H = 15;         // 150 mm membrane upstand around the plinth
 const BASE = 20, BASE_T = 1;               // 200 x 200 x 10 base plate
 const POST = 5;                            // 50 x 50 SHS post
 const POST_TOP = 56;
 const XM_H = 6, XM_Y = 41;                 // 60 mm channel, 820 mm long
-const PAD_H = 1.5, PAD_Y = 29;             // 15 mm neoprene isolation pad
+const PAD_H = 1.9, PAD_Y = 29;             // 19 mm neoprene isolation pad
 const DUCT_Y = 30;                         // 600 mm wide over cladding
-const DUCT_Z = POST_TOP + XM_H + PAD_H;    // underside 635 mm above roof finish
+const DUCT_Z = POST_TOP + XM_H + PAD_H;    // underside 639 mm above roof finish
 const DUCT_H = 50;                         // 500 mm high over cladding
 const DUCT_TOP = DUCT_Z + DUCT_H;
 const DUCT_X = [-165, 165];
@@ -294,7 +294,7 @@ const plate = k.plateHtml({
     { mark: "flat", label: "Roof slab, screed and paving: the host trade" },
   ],
   caption:
-    `A 600 × 500 mm insulated supply duct (500 × 400 mm inside a 50 mm wrap) on two roof frames 1.9 m apart, underside 635 mm above the roof finish. ` +
+    `A 600 × 500 mm insulated supply duct (500 × 400 mm inside a 50 mm wrap) on two roof frames 1.9 m apart, underside ${Math.round(DUCT_Z * 10)} mm above the roof finish (shop detail SD-04). ` +
     `LOD 200 is a massing envelope. LOD 300 fixes size, route and the stand (${cumulative[300]} parts). ` +
     `LOD 350 adds everything that touches another trade: plinths, membrane upstands, base plates, anchors, isolation pads, hold-down straps and the insulation build-up (${cumulative[350]}). ` +
     `LOD 400 adds what a fabricator needs: TDC flanges and their bolts, nuts and washers, post welds, cladding laps and the equipment tag (${cumulative[400]}).`,
