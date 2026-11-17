@@ -1,0 +1,3 @@
+drawing-qa/figure/*.html
+drawing-qa/figure/*.fragment.json
+__pycache__/
